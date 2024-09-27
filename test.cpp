@@ -819,8 +819,10 @@ int main(int argc, char *argv[])
                     syscall_id = regs.orig_rax;
 #endif
 
-                    // 取消对 Java 安全性检查，否则该评测机不能正常运行
-                    if (judge_conf::LANG_JAVA != problem::lang && syscall_id > 0 && (!is_valid_syscall(problem::lang, syscall_id, userexe, regs)))
+                    // @TODO
+                    // Java 以及 Python 的安全性防护
+                    if ((judge_conf::LANG_JAVA != problem::lang && judge_conf::LANG_PYTHON != problem::lang) 
+                        && syscall_id > 0 && (!is_valid_syscall(problem::lang, syscall_id, userexe, regs)))
                     {
                         LOG_WARNING("error for syscall %d", syscall_id);
                         problem::result = judge_conf::OJ_RF;

@@ -110,8 +110,40 @@ SysCallLimit JavaLimit[] = {
     EndLimitTable
 };
 
+SysCallLimit PythonLimit[] = {
+    Allow (SYS_access) Calls (16),
+    Allow (SYS_brk) Calls (4),
+    Allow (SYS_clock_gettime) Calls (INF),
+    Allow (SYS_clone) Calls (1),
+    Allow (SYS_close) Calls (INF),
+    Allow (SYS_execve) Calls (1),
+    Allow (SYS_exit_group) Calls (1),
+    Allow (SYS_fstat64) Calls (16),
+    Allow (SYS_futex) Calls (INF),
+    Allow (SYS_get_thread_area) Calls (1),
+    Allow (SYS_getdents64) Calls (2),
+    Allow (SYS_mmap2) Calls (INF),
+    Allow (SYS_mprotect) Calls (16),
+    Allow (SYS_munmap) Calls (INF),
+    Allow (SYS_open) Calls (INF),
+    Allow (SYS_openat) Calls (1),
+    Allow (SYS_read) Calls (INF),
+    Allow (SYS_readlink) Calls (2),
+    Allow (SYS_rt_sigaction) Calls (2),
+    Allow (SYS_rt_sigprocmask) Calls (1),
+    Allow (SYS_set_robust_list) Calls (1),
+    Allow (SYS_set_thread_area) Calls (1),
+    Allow (SYS_set_tid_address) Calls (1),
+    Allow (SYS_stat64) Calls (INF),
+    Allow (SYS_time) Calls (INF),
+    Allow (SYS_ugetrlimit) Calls (1),
+    Allow (SYS_uname) Calls (1),
+    Allow (SYS_write) Calls (INF),
+    EndLimitTable
+};
+
 SysCallLimit* TableFor[] = {
-    NULL, CLimit, CppLimit, JavaLimit,
+    NULL, CLimit, CppLimit, JavaLimit, PythonLimit
 };
 
 //初始化，系统调用限制表格

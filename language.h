@@ -62,6 +62,14 @@ const LangSupport JavaLang = {
     { "java", "-Djava.security.manager", "-Xms128M", "-Xms512M", "-DONLINE_JUDGE=true", "Main", NULL },
     2, 2, true
 };
+
+const LangSupport PythonLang = {
+    "python", "Main.py", "tc.py", "tc.py",
+    { "echo", "Nothing to do...", NULL },
+    { "python3", "Main.py", NULL },
+    2, 2, true
+};
+
 }; //End of namespace
 
 LanguageSupport::LangSupport const *Langs[] =
@@ -69,16 +77,18 @@ LanguageSupport::LangSupport const *Langs[] =
     &LanguageSupport::UnknownLang,
     &LanguageSupport::CLang,
     &LanguageSupport::CppLang,
-    &LanguageSupport::JavaLang
+    &LanguageSupport::JavaLang,
+    &LanguageSupport::PythonLang
 };
 
 namespace judge_conf
 {
-    //OJÓïÑÔ
+    //OJ语言
     const int LANG_UNKNOWN  = 0;
     const int LANG_C        = 1;
     const int LANG_CPP      = 2;
     const int LANG_JAVA     = 3;
+    const int LANG_PYTHON   = 4;
 };
 
 #endif

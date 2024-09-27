@@ -1,6 +1,5 @@
-
-/judge/Judge
-/judge/Temp/*
+Judge
+temp/
 
 ~*
 
