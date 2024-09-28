@@ -59,14 +59,14 @@ const LangSupport JavaLang = {
 #else
     { "javac", "-J-Xms128M", "-J-Xmx512M", "Main.java", NULL },
 #endif
-    { "java", "-Djava.security.manager", "-Xms128M", "-Xms512M", "-DONLINE_JUDGE=true", "Main", NULL },
+    { "runuser", "-u", "nobody", "--", "java", "-Djava.security.manager", "-Xms128M", "-Xms512M", "-DONLINE_JUDGE=true", "Main", NULL },
     2, 2, true
 };
 
 const LangSupport PythonLang = {
     "python", "Main.py", "tc.py", "tc.py",
     { "echo", "Nothing to do...", NULL },
-    { "python3", "Main.py", NULL },
+    { "runuser", "-u", "nobody", "--", "python3", "Main.py", NULL },
     2, 2, true
 };
 
